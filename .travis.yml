@@ -14,11 +14,11 @@ after_success:
     - docker build -t stizianel/multi-nginx ./nginx
     - docker build -t stizianel/multi-server ./server
     - docker build -t stizianel/multi-worker ./worker
-# Log in to the docker CLI
-- echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
-# push to docker hub
-- docker push stizianel/multi-client
-- docker push stizianel/multi-nginx
-- docker push stizianel/multi-server
-- docker push stizianel/multi-worker
+    # Log in to the docker CLI
+    - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
+    # push to docker hub
+    - docker push stizianel/multi-client
+    - docker push stizianel/multi-nginx
+    - docker push stizianel/multi-server
+    - docker push stizianel/multi-worker
 
